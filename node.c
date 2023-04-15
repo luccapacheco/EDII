@@ -1,11 +1,12 @@
- #include "node.h"
+#include "node.h"
 #include <stdlib.h>
 
-struct Node_ {
-    int valor;
-    Cliente *data;
-    Node *next;  
-};
+// struct Node_ {
+//     Cliente *data;
+//     struct Node_ *next;  
+// };  
+
+
 
 Node* cria_node(Cliente *cliente) {
     Node *novo = (Node *) malloc(sizeof(Node));
@@ -15,8 +16,6 @@ Node* cria_node(Cliente *cliente) {
     return novo;
 }
 
-
-
 Cliente* get_data(Node *node) {
     return node->data;
 }
@@ -25,10 +24,10 @@ Node* get_next(Node *node) {
     return node->next;
 }
 
-void set_next(Node* node, Node* node_next){
-     node->next = node_next;
-}
+// void set_next(Node* node, Node* node_next){
+//      node->next = node_next;
+// }
 
-int set_data(Node* node, int valor){
-     node->data = valor;
-}
+// int set_data(Node* node, int valor){
+//      node->data = valor;
+// }

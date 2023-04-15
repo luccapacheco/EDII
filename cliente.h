@@ -1,3 +1,6 @@
+#ifndef CLIENTE_H
+#define CLIENTE_H
+
 typedef struct Cliente_ Cliente;
 
 Cliente* cria_cliente(char *nome, char *bairro, int qtd_pessoas, int criancas, double renda_bruta);
@@ -7,3 +10,6 @@ int get_pessoas(Cliente *cliente);
 int get_criancas(Cliente *cliente);
 double get_renda(Cliente *cliente);
 int get_faixa_renda(Cliente *cliente);
+
+
+#endif // CLIENTE_H 

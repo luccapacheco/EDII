@@ -22,7 +22,8 @@ int hash(char *str) {
         }
         temp &= ~high;
     }
-    return temp % TABSIZE;}
+    return temp % TABSIZE;
+}
 
 Estrutura* cria_estrutura() {
     Estrutura *estrutura = (Estrutura *) malloc(sizeof(Estrutura));
@@ -56,18 +57,15 @@ Lista* recupera_cliente(Estrutura *estrutura, int tipo_busca, int criterio_numer
 
 void insere_cliente(Estrutura *estrutura, int tipo_busca, Cliente *cliente){
   Node *node = cria_node(cliente);
-  int indice = hash(estrutura, get_nome(cliente));
-  if(estrutura->tabela_nome[indice]inicio == NULL){
-    estrutura->tabela_nome[indice]inicio = node;
-    estrutura->tabela_nome[indice]fim = node;
-  }else{
-    set_next(estrutura->tabela_nome[indice]fim, node);
-    estrutura->tabela_nome[indice]fim = node;
-  }
+
+  int indice = hash(get_nome(cliente));
+  inserir_fim(estrutura->tabela_nome[indice], node);
   
-
-        
-    }
-    
-
-
+//   if(estrutura->tabela_nome[indice].inicio == NULL){
+//     estrutura->tabela_nome[indice].inicio = node;
+//     estrutura->tabela_nome[indice].fim = node;
+//   }else{
+//     set_next(estrutura->tabela_nome[indice]fim, node);
+//     estrutura->tabela_nome[indice].fim = node;
+//   }
+}
